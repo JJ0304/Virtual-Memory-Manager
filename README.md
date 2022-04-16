@@ -3,7 +3,7 @@
 SOFE 3950: Operating Systems
 Lab 5
 
-Designing a Virtual Memory Manager \n
+Designing a Virtual Memory Manager 
 This project consists of writing a program that translates logical to physical addresses for a
 virtual address space of size 216 = 65,536 bytes. Your program will read from a file containing
 logical addresses and, using a TLB as well as a page table, will translate each logical address to
