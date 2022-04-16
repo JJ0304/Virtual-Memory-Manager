@@ -93,7 +93,7 @@ addresses.txt. You should use this file to determine if your program is correctl
 logical to physical addresses.
 
 
-Statistics
+Statistics:
 After completion, your program is to report the following statistics:
 1. Page-fault rate: The percentage of address references that resulted in page faults.
 2. TLB hit rate: The percentage of address references that were resolved in the TLB.
@@ -101,7 +101,7 @@ Since the logical addresses in addresses.txt were generated randomly and do not 
 memory access locality, do not expect to have a high TLB hit rate.
 
 
-Modifications
+Modifications:
 This project assumes that physical memory is the same size as the virtual address space. In
 practice, physical memory is typically much smaller than a virtual address space. A suggested
 modification is to use a smaller physical address space. We recommend using 128 page frames
