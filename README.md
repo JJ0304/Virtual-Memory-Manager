@@ -3,7 +3,7 @@
 SOFE 3950: Operating Systems
 Lab 5
 
-Designing a Virtual Memory Manager 
+Designing a Virtual Memory Manager:
 This project consists of writing a program that translates logical to physical addresses for a
 virtual address space of size 216 = 65,536 bytes. Your program will read from a file containing
 logical addresses and, using a TLB as well as a page table, will translate each logical address to
@@ -12,7 +12,7 @@ physical address. The goal behind this project is to simulate the steps involved
 logical to physical addresses.
 
 
-Specifics
+Specifics:
 Your program will read a file containing several 32-bit integer numbers that represent logical
 addresses. However, you need only be concerned with 16-bit addresses, so you must mask the
 rightmost 16 bits of each logical address. These 16 bits are divided into (1) an 8-bit page number
@@ -29,7 +29,7 @@ translating them to their corresponding physical addresses. You do not need to s
 the logical address space.
 
 
-Address Translation
+Address Translation:
 Your program will translate logical to physical addresses using a TLB and page table as outlined
 in the class (document is included). First, the page number is extracted from the logical address,
 and the TLB is consulted. In the case of a TLB-hit, the frame number is obtained from the TLB.
@@ -38,7 +38,7 @@ number is obtained from the page table or a page fault occurs. A visual represen
 address-translation process appears in the Figure bellow.
 
 
-Handling Page Faults
+Handling Page Faults:
 Your program will implement demand paging as described in the book (document is included).
 The backing store is represented by the file BACKING_STORE.bin, a binary file of size 65,536
 bytes. When a page fault occurs, you will read in a 256-byte page from the file
@@ -47,8 +47,7 @@ a logical address with page number 15 resulted in a page fault, your program wou
 15 from BACKING_STORE (remember that pages begin at 0 and are 256 bytes in size) and
 store it in a page frame in physical memory. Once this frame is stored (and the page table and
 TLB are updated), subsequent accesses to page 15 will be resolved by either the TLB or the page
-table.
-You will need to treat BACKING_STORE.bin as a random-access file so that you can randomly
+table. You will need to treat BACKING_STORE.bin as a random-access file so that you can randomly
 seek to certain positions of the file for reading. We suggest using the standard C library functions
 for performing I/O, including fopen(), fread(), fseek(), and fclose().
 The size of physical memory is the same as the size of the virtual address space—65,536 bytes—
@@ -57,14 +56,14 @@ describe a modification to this project using a smaller amount of physical memor
 a page-replacement strategy will be required.
 
 
-Test File
+Test File:
 We provide the file addresses.txt, which contains integer values representing logical addresses
 ranging from 0 − 65535 (the size of the virtual address space). Your program will open this file,
 read each logical address and translate it to its corresponding physical address, and output the
 value of the signed byte at the physical address.
 
 
-How to Begin
+How to Begin:
 First, write a simple program that extracts the page number and offset from the following integer
 numbers:
 1, 256, 32768, 32769, 128, 65534, 33153
@@ -78,9 +77,9 @@ only 16 entries, so you will need to use a replacement strategy when you update 
 may use either a FIFO or an LRU policy for updating your TLB.
 
 
-How to Run Your Program
+How to Run Your Program:
 Your program should run as follows:
-./a.out addresses.txt
+./lab5 addresses.txt
 Your program will read in the file addresses.txt, which contains 1,000 logical addresses ranging
 from 0 to 65535. Your program is to translate each logical address to a physical address and
 determine the contents of the signed byte stored at the correct physical address. (Recall that in
